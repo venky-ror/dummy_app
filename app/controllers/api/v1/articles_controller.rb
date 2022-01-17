@@ -33,7 +33,7 @@ class Api::V1::ArticlesController < Api::V1::ApiController
         render json: { success: true, data: {
           :id => article.id,
           :title => article.title.blank? ? "" : article.title,
-          :desc => article.body.blank? ? "" : article.body,
+          :body => article.body.blank? ? "" : article.body,
           :created_date => article.created_at.nil? ? "" : article.created_at.strftime("%d/%m/%Y")
         } }
       else
@@ -52,7 +52,7 @@ class Api::V1::ArticlesController < Api::V1::ApiController
         render json: { success: true, data: {
           :id => article.id,
           :title => article.title.blank? ? "" : article.title,
-          :desc => article.body.blank? ? "" : article.body,
+          :body => article.body.blank? ? "" : article.body,
           :created_date => article.created_at.nil? ? "" : article.created_at.strftime("%d/%m/%Y")
         } }
       else
@@ -81,7 +81,8 @@ class Api::V1::ArticlesController < Api::V1::ApiController
   end
 
   def allowed_params
-    params.permit(:title, :body)
+    #params.permit(:title, :body)
+     params.require(:article).permit(:id, :title, :body)
   end
 
   def get_atricles(articles)
@@ -90,7 +91,7 @@ class Api::V1::ArticlesController < Api::V1::ApiController
       data = {
         :id => article.id.blank? ? "" : article.id,
         :title => article.title.blank? ? "" : article.title,
-        :desc => article.body.blank? ? "" : article.body,
+        :body => article.body.blank? ? "" : article.body,
         :created_date => article.created_at.nil? ? "" : article.created_at.strftime("%d/%m/%Y")
       }
       prs << data
