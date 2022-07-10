@@ -57,6 +57,11 @@ group :development do
   gem "rspec-rails"
   gem 'database_cleaner'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 group :test do
