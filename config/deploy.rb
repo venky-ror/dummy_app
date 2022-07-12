@@ -35,13 +35,6 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/sidekiq.yml',
   'config/storage.yml'
 )
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids',
-  'tmp/sockets', 'public/uploads', 'webapp/node_modules', 'webapp/dist', 'public/storage'
-)
-after 'deploy:published', 'custom:paranoia_setup' if ENV['MIGRATION_CHANGE'] || ENV['FIRST_DEPLOY']
-after 'deploy:published', 'pincode_setup:seed' if ENV['PINCODE_CHANGE'] || ENV['FIRST_DEPLOY']
-after 'deploy:published', 'deploy:webapp' if ENV['DEPLOY_WEB'] || ENV['FIRST_DEPLOY']
-
 set :bundle_binstubs, nil
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
