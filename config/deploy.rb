@@ -81,7 +81,8 @@ namespace :deploy do
     end
 
     on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:restart'
+      # invoke 'puma:restart'
+      invoke!("puma:restart")
     end
   end
 
