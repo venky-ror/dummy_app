@@ -74,7 +74,6 @@ namespace :deploy do
       puts "#{current_path}"
       within "#{current_path}" do
         with :rails_env => :production do
-          execute :rake, "initiate_library:dep"
           execute :rake, "sidekiq:stop"
           execute :rake, "sidekiq:restart"
         end
