@@ -35,6 +35,10 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/sidekiq.yml'
   # 'config/storage.yml'
 )
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids',
+  'tmp/sockets', 'public/uploads', 'public/storage'
+
 set :bundle_binstubs, nil
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
