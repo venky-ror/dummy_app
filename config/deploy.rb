@@ -1,4 +1,4 @@
-set :repo_url,        "git@github.com:venky-ror/Rspect-Test-Cases.git"
+set :repo_url,        "git@github.com:venky-ror/dummy_app.git"
 set :application,     "dummy_app"
 set :user,            "ubuntu"
 set :puma_threads,    [4, 25]
