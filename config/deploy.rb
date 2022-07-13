@@ -32,8 +32,8 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/database.yml',
   'config/cable.yml',
   'config/master.key',
-  'config/sidekiq.yml',
-  'config/storage.yml'
+  'config/sidekiq.yml'
+  # 'config/storage.yml'
 )
 set :bundle_binstubs, nil
 namespace :puma do
