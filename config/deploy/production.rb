@@ -1,4 +1,3 @@
-server "13.233.39.162", roles: [:web, :app, :db], primary: true
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
