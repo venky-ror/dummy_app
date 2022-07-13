@@ -38,6 +38,7 @@ gem 'sidekiq'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'kaminari'
+gem 'aws-sdk-s3'
 
 gem 'rack-cors', :require => 'rack/cors'
 
