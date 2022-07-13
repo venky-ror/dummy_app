@@ -69,16 +69,16 @@ namespace :deploy do
   end
 
   desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      puts "#{current_path}"
-      within "#{current_path}" do
-        with :rails_env => :production do
-          # execute :rake, "sidekiq:stop"
-          # execute :rake, "sidekiq:restart"
-        end
-      end
-    end
+  # task :restart do
+  #   on roles(:app), in: :sequence, wait: 5 do
+  #     puts "#{current_path}"
+  #     within "#{current_path}" do
+  #       with :rails_env => :production do
+  #         # execute :rake, "sidekiq:stop"
+  #         # execute :rake, "sidekiq:restart"
+  #       end
+  #     end
+  #   end
 
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
@@ -88,5 +88,5 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  # after  :finishing,    :restart
+  after  :finishing,    :restart
 end
