@@ -1,6 +1,6 @@
 set :repo_url,        "git@github.com:venky-ror/dummy_app.git"
 set :application,     "dummy_app"
-set :user,            "ubuntu"
+set :user,            "ror"
 set :puma_threads,    [4, 25]
 set :puma_workers,    0
 
