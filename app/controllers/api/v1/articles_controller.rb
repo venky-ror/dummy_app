@@ -82,7 +82,6 @@ class Api::V1::ArticlesController < Api::V1::ApiController
 
   def allowed_params
     params.permit(:title, :body)
-     # params.require(:article).permit(:id, :title, :body)
   end
 
   def get_atricles(articles)
